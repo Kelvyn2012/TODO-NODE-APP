@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TODO App</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>TODO List</h1>
+
+  <form action="/add" method="POST">
+    <input name="title" placeholder="Task Title" required>
+    <input name="description" placeholder="Description">
+    <select name="priority">
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+    <button type="submit">Add Task</button>
+  </form>
+
+  <ul>
+    <% tasks.forEach(task => { %>
+      <li class="<%= task.priority.toLowerCase() %>">
+        <strong><%= task.title %></strong>: <%= task.description %> 
+        (<%= task.priority %>)
+        <form action="/delete/<%= task.id %>" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>

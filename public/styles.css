@@ -1,0 +1,26 @@
+body {
+  font-family: sans-serif;
+  margin: 2rem;
+}
+
+form {
+  margin-bottom: 1rem;
+}
+
+.low {
+  background-color: #d4edda;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.medium {
+  background-color: #fff3cd;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.high {
+  background-color: #f8d7da;
+  padding: 5px;
+  margin-bottom: 5px;
+}
