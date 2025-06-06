@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Task</title>
+</head>
+<body>
+  <h1>Edit Task</h1>
+  <form action="/edit/<%= task.id %>" method="POST">
+    <input type="text" name="title" value="<%= task.title %>" required>
+    <input type="text" name="description" value="<%= task.description %>">
+    <select name="priority">
+      <option value="Low" <%= task.priority === 'Low' ? 'selected' : '' %>>Low</option>
+      <option value="Medium" <%= task.priority === 'Medium' ? 'selected' : '' %>>Medium</option>
+      <option value="High" <%= task.priority === 'High' ? 'selected' : '' %>>High</option>
+    </select>
+    <button type="submit">Update Task</button>
+  </form>
+  <br>
+  <a href="/">Back to list</a>
+</body>
+</html>
